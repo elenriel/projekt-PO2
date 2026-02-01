@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             x:Class="TRS_APP.Views.ReportsView">
+  <Grid RowDefinitions="Auto,Auto,*" Margin="14" RowSpacing="10">
+    <TextBlock Text="Raporty" FontSize="22" FontWeight="SemiBold"/>
+
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="10">
+      <Button x:Name="Report1Btn" Content="Rezerwacje per wydarzenie"/>
+      <Button x:Name="Report2Btn" Content="Przychód per wydarzenie"/>
+      <Button x:Name="Report3Btn" Content="Ostatnie rezerwacje"/>
+      <TextBlock x:Name="StatusTxt" Margin="12,0,0,0" VerticalAlignment="Center" Opacity="0.8"/>
+    </StackPanel>
+
+    <Border Grid.Row="2" CornerRadius="8" Padding="8" BorderBrush="#333" BorderThickness="1">
+      <dg:DataGrid x:Name="ReportGrid" AutoGenerateColumns="True"/>
+    </Border>
+  </Grid>
+</UserControl>

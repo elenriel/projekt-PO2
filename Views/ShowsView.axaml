@@ -1,0 +1,21 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             x:Class="TRS_APP.Views.ShowsView"
+             x:CompileBindings="False">
+
+  <Grid RowDefinitions="Auto,*,Auto" Margin="14" RowSpacing="10">
+    <TextBlock Text="Seanse" FontSize="22" FontWeight="SemiBold"/>
+
+    <Border Grid.Row="1" CornerRadius="8" Padding="8" BorderBrush="#333" BorderThickness="1">
+      <dg:DataGrid x:Name="ShowsGrid" IsReadOnly="True" AutoGenerateColumns="True"/>
+    </Border>
+
+    <StackPanel Grid.Row="2" Orientation="Horizontal" Spacing="10">
+      <Button x:Name="RefreshBtn" Content="Odśwież"/>
+      <Button x:Name="AddBtn" Content="Dodaj przykładowy"/>
+      <Button x:Name="DeleteBtn" Content="Usuń zaznaczone"/>
+      <TextBlock x:Name="StatusTxt" Margin="12,0,0,0" VerticalAlignment="Center" Opacity="0.8"/>
+    </StackPanel>
+  </Grid>
+</UserControl>
