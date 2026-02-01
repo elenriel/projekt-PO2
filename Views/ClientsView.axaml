@@ -1,0 +1,34 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             x:Class="TRS_APP.Views.ClientsView"
+             x:CompileBindings="False">
+
+  <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="14" RowSpacing="10">
+    <TextBlock Text="Klienci" FontSize="22" FontWeight="SemiBold"/>
+
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="10">
+      <TextBox x:Name="FirstNameBox" Width="160" Watermark="Imię"/>
+      <TextBox x:Name="LastNameBox"  Width="160" Watermark="Nazwisko"/>
+      <TextBox x:Name="EmailBox"     Width="220" Watermark="Email (opcjonalnie)"/>
+      <Button x:Name="AddBtn" Content="Dodaj"/>
+    </StackPanel>
+
+    <Border Grid.Row="2" CornerRadius="8" Padding="8" BorderBrush="#333" BorderThickness="1">
+      <dg:DataGrid x:Name="ClientsGrid" IsReadOnly="True" AutoGenerateColumns="False">
+        <dg:DataGrid.Columns>
+          <dg:DataGridTextColumn Header="Imię"      Binding="{Binding FirstName}"/>
+          <dg:DataGridTextColumn Header="Nazwisko"  Binding="{Binding LastName}"/>
+          <dg:DataGridTextColumn Header="Email"     Binding="{Binding Email}"/>
+          <dg:DataGridTextColumn Header="Id"        Binding="{Binding ClientId}"/>
+        </dg:DataGrid.Columns>
+      </dg:DataGrid>
+    </Border>
+
+    <StackPanel Grid.Row="3" Orientation="Horizontal" Spacing="10">
+      <Button x:Name="RefreshBtn" Content="Odśwież"/>
+      <Button x:Name="DeleteBtn" Content="Usuń zaznaczone"/>
+      <TextBlock x:Name="StatusTxt" Margin="12,0,0,0" VerticalAlignment="Center" Opacity="0.8"/>
+    </StackPanel>
+  </Grid>
+</UserControl>

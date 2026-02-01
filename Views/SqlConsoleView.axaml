@@ -1,0 +1,23 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             x:Class="TRS_APP.Views.SqlConsoleView"
+             x:CompileBindings="False">
+
+  <Grid RowDefinitions="Auto,Auto,*" Margin="14" RowSpacing="10">
+
+    <TextBlock Text="SQL Console" FontSize="22" FontWeight="SemiBold"/>
+
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="10">
+      <TextBox x:Name="SqlBox" Width="520" AcceptsReturn="True" TextWrapping="Wrap"
+               Watermark="Wpisz SELECT lub INSERT/UPDATE/DELETE..."/>
+      <Button x:Name="RunBtn" Content="Wykonaj"/>
+      <TextBlock x:Name="StatusTxt" Margin="12,0,0,0" VerticalAlignment="Center" Opacity="0.8"/>
+    </StackPanel>
+
+    <Border Grid.Row="2" CornerRadius="8" Padding="8" BorderBrush="#333" BorderThickness="1">
+      <dg:DataGrid x:Name="ResultGrid" IsReadOnly="True" AutoGenerateColumns="True"/>
+    </Border>
+
+  </Grid>
+</UserControl>

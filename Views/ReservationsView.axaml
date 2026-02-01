@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+             x:Class="TRS_APP.Views.ReservationsView">
+  <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="14" RowSpacing="10">
+    <TextBlock Text="Rezerwacje" FontSize="22" FontWeight="SemiBold"/>
+
+    <StackPanel Grid.Row="1" Orientation="Horizontal" Spacing="10">
+      <TextBlock Text="ClientId:" VerticalAlignment="Center"/>
+      <TextBox x:Name="ClientIdBox" Width="80" Text="1"/>
+      <TextBlock Text="ShowId:" VerticalAlignment="Center"/>
+      <TextBox x:Name="ShowIdBox" Width="80" Text="1"/>
+      <TextBlock Text="SeatNo:" VerticalAlignment="Center"/>
+      <TextBox x:Name="SeatNoBox" Width="80" Text="1"/>
+      <Button x:Name="CreateBtn" Content="Utwórz (procedura)"/>
+      <Button x:Name="RefreshBtn" Content="Odśwież"/>
+    </StackPanel>
+
+    <Border Grid.Row="2" CornerRadius="8" Padding="8" BorderBrush="#333" BorderThickness="1">
+      <dg:DataGrid x:Name="ResGrid" AutoGenerateColumns="True"/>
+    </Border>
+
+    <TextBlock Grid.Row="3" x:Name="StatusTxt" Opacity="0.8"/>
+  </Grid>
+</UserControl>
